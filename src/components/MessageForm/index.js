@@ -1,18 +1,22 @@
 import React from 'react'
 import * as request from 'superagent'
 import View from './view'
+import { url } from '../../constants'
 
 export default class MessageForm extends React.Component {
-  state = { message: '' }
+  state = {
+    message: ''
+  }
 
   onSubmit = async (event) => {
     event.preventDefault()
 
     await request
-      .post('https://immense-mountain-94323.herokuapp.com/message')
+      .post(`${url}/message`)
       .send({
         message: this.state.message,
-        user: this.props.user
+        user: this.props.user,
+        channelId: this.props.channelId
       })
 
     this.setState({ message: '' })

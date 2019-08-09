@@ -1,8 +1,8 @@
-export const ALL_MESSAGES = 'ALL_MESSAGES'
+export const ALL_CHANNELS = 'ALL_CHANNELS'
 
-export function allMessages (payload) {
+export function allChannels (payload) {
   return {
-    type: ALL_MESSAGES,
+    type: ALL_CHANNELS,
     payload
   }
 }
